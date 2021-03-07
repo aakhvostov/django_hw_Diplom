@@ -1,10 +1,9 @@
 from django.shortcuts import render
-from rest_framework import viewsets
-
-
-# class CoinCostViewSet(viewsets.ModelViewSet):
+# from rest_framework import viewsets
 #
-#     queryset = Coins.objects.all()
+# class ProductViewSet(viewsets.ModelViewSet):
+#
+#     queryset = .objects.all()
 #     serializer_class = CoinSerializer
 #     filter_backends = (filters.DjangoFilterBackend,)
 #     filterset_class = CoinCostFilterSet

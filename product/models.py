@@ -11,7 +11,7 @@ class Product(models.Model):
     updated_at = models.DateField(auto_now=True, auto_now_add=False)
 
     class Meta:
-        ordering = ['-name']
+        ordering = ['-id']
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
 

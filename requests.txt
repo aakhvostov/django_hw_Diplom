@@ -1,0 +1,46 @@
+GET http://127.0.0.1:8000/product/
+Content-Type: application/json
+###
+
+GET http://127.0.0.1:8000/review/
+Content-Type: application/json
+###
+
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+    "username": "Test1",
+    "password": "1209qwpo"
+}
+
+###
+
+POST http://127.0.0.1:8000/product/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MDU4NzU0LCJqdGkiOiI3NzA5ZTM0NjFmNjM0M2Y1OTc5ZmJlNTM2OWZjMzJhOSIsInVzZXJfaWQiOjR9.iNs59u-E2yj__cqpznXPwJU9accSH4mgr77MGMZd9co
+
+{
+  "name": "Scull1",
+  "description": "Sc1",
+  "price": 600.00
+}
+
+###
+
+DELETE  http://127.0.0.1:8000/review/1
+Content-Type: application/json
+# Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MDU4NzU0LCJqdGkiOiI3NzA5ZTM0NjFmNjM0M2Y1OTc5ZmJlNTM2OWZjMzJhOSIsInVzZXJfaWQiOjR9.iNs59u-E2yj__cqpznXPwJU9accSH4mgr77MGMZd9co
+
+###
+
+POST http://127.0.0.1:8000/review/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MDk2OTgyLCJqdGkiOiI5ZmM1YWE2Zjc1ZTQ0ODIyOWU0MjQ0MWU3YWEwN2Y5NSIsInVzZXJfaWQiOjR9.888T5kydSYaYItWqVov_QimEgUOMJD-Vb3QZdoRKELs
+
+{
+    "author": 3,
+    "product": 11,
+    "text": "sdfkjwelkf",
+    "rating": 5
+}
