@@ -1,46 +1,80 @@
-GET http://127.0.0.1:8000/product/
-Content-Type: application/json
-###
+#################### Authorization ####################
 
-GET http://127.0.0.1:8000/review/
-Content-Type: application/json
-###
-
-POST http://127.0.0.1:8000/api/token/
+POST http://127.0.0.1:8000/api/v1/token/
 Content-Type: application/json
 
 {
-    "username": "Test1",
+    "username": "test2",
     "password": "1209qwpo"
 }
 
+#################### PRODUCTS ####################
+
+GET http://127.0.0.1:8000/api/v1/products/
+Content-Type: application/json
+
 ###
 
-POST http://127.0.0.1:8000/product/
+POST http://127.0.0.1:8000/api/v1/products/
 Content-Type: application/json
-Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MDU4NzU0LCJqdGkiOiI3NzA5ZTM0NjFmNjM0M2Y1OTc5ZmJlNTM2OWZjMzJhOSIsInVzZXJfaWQiOjR9.iNs59u-E2yj__cqpznXPwJU9accSH4mgr77MGMZd9co
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTk4NzE0LCJqdGkiOiI5NDc3YTZmYzk5ZDI0M2Q2OGUzMDRjZjNkMzNlMjQ1MyIsInVzZXJfaWQiOjN9.r7l3a4yKQ02QD2QaPco5VCDaZ2JB2nQkolWsBUwEre8
 
 {
-  "name": "Scull1",
-  "description": "Sc1",
-  "price": 600.00
+  "name": "Scull2",
+  "description": "Sc2",
+  "price": 650.00
 }
 
 ###
 
-DELETE  http://127.0.0.1:8000/review/1
+DELETE http://127.0.0.1:8000/api/v1/products/13/
 Content-Type: application/json
-# Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MDU4NzU0LCJqdGkiOiI3NzA5ZTM0NjFmNjM0M2Y1OTc5ZmJlNTM2OWZjMzJhOSIsInVzZXJfaWQiOjR9.iNs59u-E2yj__cqpznXPwJU9accSH4mgr77MGMZd9co
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTk4NzE0LCJqdGkiOiI5NDc3YTZmYzk5ZDI0M2Q2OGUzMDRjZjNkMzNlMjQ1MyIsInVzZXJfaWQiOjN9.r7l3a4yKQ02QD2QaPco5VCDaZ2JB2nQkolWsBUwEre8
+
+#################### REVIEW ####################
+
+GET http://127.0.0.1:8000/api/v1/product-reviews/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTk4MjA3LCJqdGkiOiJhN2M5NDVkMjQ3ZmI0NWE2OWE3YTU0NTI2NjA4ZWU5NyIsInVzZXJfaWQiOjV9.ZqwGH0vFS8zUSXmYOx_CbDdS3ESgMCeHVeZ0fh78rQ4
 
 ###
 
-POST http://127.0.0.1:8000/review/
+POST http://127.0.0.1:8000/api/v1/product-reviews/
 Content-Type: application/json
-Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MDk2OTgyLCJqdGkiOiI5ZmM1YWE2Zjc1ZTQ0ODIyOWU0MjQ0MWU3YWEwN2Y5NSIsInVzZXJfaWQiOjR9.888T5kydSYaYItWqVov_QimEgUOMJD-Vb3QZdoRKELs
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTk4MjA3LCJqdGkiOiJhN2M5NDVkMjQ3ZmI0NWE2OWE3YTU0NTI2NjA4ZWU5NyIsInVzZXJfaWQiOjV9.ZqwGH0vFS8zUSXmYOx_CbDdS3ESgMCeHVeZ0fh78rQ4
 
 {
-    "author": 3,
-    "product": 11,
-    "text": "sdfkjwelkf",
+    "product": 9,
+    "text": "супер кружка",
     "rating": 5
 }
+
+###
+
+DELETE  http://127.0.0.1:8000/api/v1/product-reviews/14/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTk4MjA3LCJqdGkiOiJhN2M5NDVkMjQ3ZmI0NWE2OWE3YTU0NTI2NjA4ZWU5NyIsInVzZXJfaWQiOjV9.ZqwGH0vFS8zUSXmYOx_CbDdS3ESgMCeHVeZ0fh78rQ4
+
+#################### ORDER ####################
+
+GET http://127.0.0.1:8000/api/v1/orders/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MjM0Mzc5LCJqdGkiOiJmYjkxOTE3MWUwNmU0MDVjYTQ3NzdlY2U5MTRiZTY2NyIsInVzZXJfaWQiOjN9.CqbIixUZuTNppy14NJ_Y7KLjwOHUPRBLLHz4zCFcw3A
+
+###
+
+PATCH http://127.0.0.1:8000/api/v1/orders/1/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MjM0NDE1LCJqdGkiOiJjZTgyNDY1MzM5NjQ0ZjhkYjRlZTUxNTMzMjI2ZDA0OSIsInVzZXJfaWQiOjJ9.hqwlwCTJh_NpuXA1C3o8UTvb7FYD_sj_pl6VwPvyjM4
+
+{
+  "status": "IN_PROGRESS"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/orders/1/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MjM0NjI0LCJqdGkiOiJmM2JmZDc4MzQ5ZWE0OWNjYTBkZDE2MWYwNzgzOWVmMiIsInVzZXJfaWQiOjV9.11ZBFUM2fY9OEI4Y9jeC9xlYujo7T5Ram6D0082ZbNo
+
+###

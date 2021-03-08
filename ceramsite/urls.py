@@ -14,31 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from rest_framework import routers
+from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
-from product.views import ProductViewSet, ReviewViewSet
+from rest_framework import routers
+from collection.urls import router as collection_router
+from order.urls import router as order_router
+from product.urls import router as product_router
+
 admin.autodiscover()
-
-
 router = routers.DefaultRouter()
 
+router.registry.extend(collection_router.registry)
+router.registry.extend(order_router.registry)
+router.registry.extend(product_router.registry)
 
-urlpatterns = [
+urlpatterns = router.urls + [
     path('admin/', admin.site.urls),
-    path('', include('order.urls')),
-    path('', include('product.urls')),
-    path('', include('collection.urls')),
-
-    path('api/token/', TokenObtainPairView.as_view()),
-    path('api/token/refresh/', TokenRefreshView.as_view()),
-    path('api/token/verify/', TokenVerifyView.as_view()),
-
-    path('review/', ReviewViewSet.as_view({'get': 'list', 'post': 'create'})),
-    path('review/<int:pk>/', ReviewViewSet.as_view({'get': 'retrieve', 'delete': 'destroy'})),
-    path('product/', ProductViewSet.as_view({
-        'get': 'list',
-        'post': 'create',
-        'delete': 'destroy',
-    })),
-    ]
+    path('api/v1/token/', TokenObtainPairView.as_view()),
+    path('api/v1/token/refresh/', TokenRefreshView.as_view()),
+    path('api/v1/token/verify/', TokenVerifyView.as_view()),
+]

@@ -26,21 +26,34 @@ class ProductShortSerialiser(serializers.ModelSerializer):
         fields = ('id', 'name', 'price')
 
 
-class ReviewSerialiser(serializers.ModelSerializer):
-    """ Serializer для отзывов к товарам """
-    product = ProductShortSerialiser(many=False, read_only=True)
-    author = UserSerializer(many=False, read_only=True)
+class ReviewListSerialiser(serializers.ModelSerializer):
+    """ Serializer для просмотра отзывов к товарам """
+    product = ProductShortSerialiser(read_only=True)
+    author = UserSerializer(read_only=True)
 
     class Meta:
         model = Review
-        fields = ('id', 'author', 'product', 'rating', 'created_at')
+        fields = '__all__'
+
+
+class ReviewCUDSerialiser(serializers.ModelSerializer):
+    """ Serializer для создания отзыво к товару """
+
+    author = UserSerializer(read_only=True)
+
+    class Meta:
+        model = Review
+        fields = '__all__'
 
     def validate(self, data):
-        """Метод для валидации. Вызывается при создании и обновлении отзыва."""
+        """
+        Метод для валидации. Вызывается при создании и обновлении отзыва
+        Проверка наличия более 1 отзыва к товару
+        """
 
-        review = Review.objects.filter(author=self.context["request"].user)
-        print(f'Review - {review}')
+        product = Product.objects.get(id=self.context["request"].data['product'])
+        review = Review.objects.filter(author=self.context["request"].user, product=product)
         if review.exists():
-            raise ValidationError('Нельзя создавать больше одного отзыва')
+            raise ValidationError('Нельзя создавать больше одного отзыва к товару')
         return data
 
