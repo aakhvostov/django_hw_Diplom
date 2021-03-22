@@ -5,3 +5,4 @@ djangorestframework-simplejwt~=4.6.0
 pillow~=8.1.2
 pytest~=6.2.2
 model-bakery~=1.2.1
+pytest-django~=4.1.0

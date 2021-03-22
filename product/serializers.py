@@ -20,7 +20,8 @@ class ProductDetailSerialiser(serializers.ModelSerializer):
 
 
 class ProductShortSerialiser(serializers.ModelSerializer):
-    """ Serializer для сериализатора отзывов """
+    """ Serializer для товара """
+
     class Meta:
         model = Product
         fields = ('id', 'name', 'price')

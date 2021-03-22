@@ -30,7 +30,7 @@ router.registry.extend(product_router.registry)
 
 urlpatterns = router.urls + [
     path('admin/', admin.site.urls),
-    path('api/v1/token/', TokenObtainPairView.as_view()),
+    path('api/v1/token/', TokenObtainPairView.as_view(), name='get_token'),
     path('api/v1/token/refresh/', TokenRefreshView.as_view()),
     path('api/v1/token/verify/', TokenVerifyView.as_view()),
 ]

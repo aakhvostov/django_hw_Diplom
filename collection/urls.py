@@ -3,5 +3,5 @@ from rest_framework import routers
 
 
 router = routers.DefaultRouter()
-router.register(r'api/v1/product-collections', CollectionViewSet, basename="product-collections")
+router.register(r'api/v1/product-collections', CollectionViewSet, basename="collections")
 urlpatterns = []
