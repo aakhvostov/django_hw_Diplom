@@ -1,0 +1,84 @@
+#################### Authorization ####################
+
+POST http://127.0.0.1:8000/api/v1/token/
+Content-Type: application/json
+
+{
+    "username": "skitol",
+    "password": "1209qwpo"
+}
+
+#################### PRODUCTS ####################
+
+GET http://127.0.0.1:8000/api/v1/products/
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8000/api/v1/products/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MjU4MDY3LCJqdGkiOiJkMjUxMGFkN2NmNmQ0YWZhOTljMTRmNTdlMGJmN2EwMyIsInVzZXJfaWQiOjN9.qGB4z2eagZbCXE2EXd79_DwcD3SZiKdaEU_JvlwY64o
+
+{
+  "name": "scelet",
+  "description": "Scel1",
+  "price": 990.00
+}
+
+###
+
+DELETE http://127.0.0.1:8000/api/v1/products/13/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTk4NzE0LCJqdGkiOiI5NDc3YTZmYzk5ZDI0M2Q2OGUzMDRjZjNkMzNlMjQ1MyIsInVzZXJfaWQiOjN9.r7l3a4yKQ02QD2QaPco5VCDaZ2JB2nQkolWsBUwEre8
+
+#################### REVIEW ####################
+
+GET http://127.0.0.1:8000/api/v1/product-reviews/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTk4MjA3LCJqdGkiOiJhN2M5NDVkMjQ3ZmI0NWE2OWE3YTU0NTI2NjA4ZWU5NyIsInVzZXJfaWQiOjV9.ZqwGH0vFS8zUSXmYOx_CbDdS3ESgMCeHVeZ0fh78rQ4
+
+###
+
+POST http://127.0.0.1:8000/api/v1/product-reviews/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTk4MjA3LCJqdGkiOiJhN2M5NDVkMjQ3ZmI0NWE2OWE3YTU0NTI2NjA4ZWU5NyIsInVzZXJfaWQiOjV9.ZqwGH0vFS8zUSXmYOx_CbDdS3ESgMCeHVeZ0fh78rQ4
+
+{
+    "product": 9,
+    "text": "супер кружка",
+    "rating": 5
+}
+
+###
+
+DELETE  http://127.0.0.1:8000/api/v1/product-reviews/14/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTk4MjA3LCJqdGkiOiJhN2M5NDVkMjQ3ZmI0NWE2OWE3YTU0NTI2NjA4ZWU5NyIsInVzZXJfaWQiOjV9.ZqwGH0vFS8zUSXmYOx_CbDdS3ESgMCeHVeZ0fh78rQ4
+
+#################### ORDER ####################
+
+GET http://127.0.0.1:8000/api/v1/orders/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MjM0Mzc5LCJqdGkiOiJmYjkxOTE3MWUwNmU0MDVjYTQ3NzdlY2U5MTRiZTY2NyIsInVzZXJfaWQiOjN9.CqbIixUZuTNppy14NJ_Y7KLjwOHUPRBLLHz4zCFcw3A
+
+###
+
+PATCH http://127.0.0.1:8000/api/v1/orders/1/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MjM0NDE1LCJqdGkiOiJjZTgyNDY1MzM5NjQ0ZjhkYjRlZTUxNTMzMjI2ZDA0OSIsInVzZXJfaWQiOjJ9.hqwlwCTJh_NpuXA1C3o8UTvb7FYD_sj_pl6VwPvyjM4
+
+{
+  "status": "IN_PROGRESS"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/orders/1/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MjM0NjI0LCJqdGkiOiJmM2JmZDc4MzQ5ZWE0OWNjYTBkZDE2MWYwNzgzOWVmMiIsInVzZXJfaWQiOjV9.11ZBFUM2fY9OEI4Y9jeC9xlYujo7T5Ram6D0082ZbNo
+
+#################### COLLECTION ####################
+
+GET http://127.0.0.1:8000/api/v1/product-collections/
+Content-Type: application/json
+# Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MjM0NjI0LCJqdGkiOiJmM2JmZDc4MzQ5ZWE0OWNjYTBkZDE2MWYwNzgzOWVmMiIsInVzZXJfaWQiOjV9.11ZBFUM2fY9OEI4Y9jeC9xlYujo7T5Ram6D0082ZbNo
