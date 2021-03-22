@@ -13,7 +13,7 @@ class ProductInOrderSerialiser(serializers.ModelSerializer):
 
 class OrderSerialiser(serializers.ModelSerializer):
     products = ProductInOrderSerialiser(many=True, read_only=True)
-    owner = UserSerializer()
+    owner = UserSerializer(read_only=True)
 
     class Meta:
         model = Order

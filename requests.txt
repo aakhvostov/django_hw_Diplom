@@ -63,6 +63,11 @@ Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWN
 
 ###
 
+POST http://127.0.0.1:8000/api/v1/orders/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NDMyNTU2LCJqdGkiOiJlNDIzYTcwODQ5YTE0NWYyODc2OGQwYTI1NWNjMDhhOCIsInVzZXJfaWQiOjV9.W16qELXicRAh5kfrlud4aSXByaxjABiqe-4CZDeq_to
+
+###
 PATCH http://127.0.0.1:8000/api/v1/orders/1/
 Content-Type: application/json
 Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MjM0NDE1LCJqdGkiOiJjZTgyNDY1MzM5NjQ0ZjhkYjRlZTUxNTMzMjI2ZDA0OSIsInVzZXJfaWQiOjJ9.hqwlwCTJh_NpuXA1C3o8UTvb7FYD_sj_pl6VwPvyjM4
@@ -81,4 +86,10 @@ Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWN
 
 GET http://127.0.0.1:8000/api/v1/product-collections/
 Content-Type: application/json
-# Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MjM0NjI0LCJqdGkiOiJmM2JmZDc4MzQ5ZWE0OWNjYTBkZDE2MWYwNzgzOWVmMiIsInVzZXJfaWQiOjV9.11ZBFUM2fY9OEI4Y9jeC9xlYujo7T5Ram6D0082ZbNo
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NDQ3NTUzLCJqdGkiOiI4YTQzNTdkYjU2MTc0ZTRhOWVhYmI2ZTE2ZDIxYmY1YyIsInVzZXJfaWQiOjN9.0oZMGQGo51BNbiSan2VbCqMpU9VXWcktvBLF8wOfTnI
+
+### 
+
+GET http://127.0.0.1:8000/api/v1/product-collections/1/
+Content-Type: application/json
+Authorization: Gluk eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NDQ3NTUzLCJqdGkiOiI4YTQzNTdkYjU2MTc0ZTRhOWVhYmI2ZTE2ZDIxYmY1YyIsInVzZXJfaWQiOjN9.0oZMGQGo51BNbiSan2VbCqMpU9VXWcktvBLF8wOfTnI

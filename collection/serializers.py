@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Collection, ProductInCollection
 from product.serializers import ProductShortSerialiser
+from product.models import Product
 
 
 class ProductInCollectionSerialiser(serializers.ModelSerializer):
@@ -17,5 +18,4 @@ class CollectionSerialiser(serializers.ModelSerializer):
     class Meta:
         model = Collection
         fields = ('id', 'title', 'text', 'products', 'created_at', 'updated_at')
-    #  ДОДЕЛАТЬ! вывод на показ всех продуктов в подборке!
 
