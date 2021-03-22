@@ -20,9 +20,10 @@ class Collection(models.Model):
 
 class ProductInCollection(models.Model):
     """ Товар в подборке """
-    collection = models.ForeignKey(Collection, on_delete=models.CASCADE, related_name='+',
+    collection = models.ForeignKey(Collection, on_delete=models.CASCADE, related_name='collect_products',
                                    verbose_name='Подборка')
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Товар в подборке')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="collect_products",
+                                verbose_name='Товар в подборке', )
 
     class Meta:
         verbose_name = 'Товар в подборке'
